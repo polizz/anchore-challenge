@@ -1,15 +1,27 @@
 # Start Couchbase container
+```
 docker run -d --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase
+```
+# Development .ENV configuration
+Create a **.env** file in the project root. Define the couch user information from your docker container post-setup configuration.
+```
+COUCH_USER=*********
+COUCH_PASS=*********
+COUCHBASE_URL=http://localhost:8091/Persons
+API_PORT=3001
+```
 
 # Create Couchbase Primary Index
+This is necessary for the N1QL queries to function. Execute in the Couchbase UI.
+
+```
 create index ix_persons_id on Persons(id);
+```
 
 
 
 
-
-
-## Getting Started with Create React App
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
