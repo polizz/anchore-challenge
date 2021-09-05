@@ -1,6 +1,6 @@
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid'
 import { IconButton } from '@mui/material'
-import { Create, Delete, Close } from '@mui/icons-material'
+import { Create, Delete } from '@mui/icons-material'
 import { useStoreState } from '../store/hooks'
 import { Person } from '../store/models/person'
 

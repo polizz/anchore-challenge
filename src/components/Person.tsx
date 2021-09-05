@@ -6,7 +6,8 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
-import { Check } from '@mui/icons-material'
+import { Check, Close } from '@mui/icons-material'
+import { IconButton } from '@mui/material'
 import InputAdornment from '@mui/material/InputAdornment'
 import { Person } from '../store/models/person'
 import { personSchema } from '../api/validations'
@@ -72,7 +73,12 @@ const PersonForm = ({
   return (
     <div style={{ height: "100%"}}>
       <Dialog style={{ display: "flex" }} maxWidth="lg" open={showDialog} onClose={() => close()}>
-        <DialogTitle>{promptText}</DialogTitle>
+        <DialogTitle style={{ display: 'flex', justifyContent: "space-between"}}>
+          {promptText}
+          <IconButton onClick={() => close()}>
+            <Close />
+          </IconButton>
+        </DialogTitle>
         <DialogContent style={{ flexDirection: "row" }}>
           <DialogContentText>
             * Optional
